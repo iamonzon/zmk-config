@@ -5,6 +5,25 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    behaviors {
+        mm_f1: mm_f1 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp F1>, <&kp C_BRI_DN>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_f2: mm_f2 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp F2>, <&kp C_BRI_UP>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_f7: mm_f7 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp F7>, <&kp C_PREV>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_f8: mm_f8 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp F8>, <&kp C_PP>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_f9: mm_f9 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp F9>, <&kp C_NEXT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_f10: mm_f10 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp F10>, <&kp C_MUTE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_f11: mm_f11 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp F11>, <&kp C_VOL_DN>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_f12: mm_f12 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>;
+            bindings = <&kp F12>, <&kp C_VOL_UP>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -30,7 +49,7 @@
 
         fn {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 1                                                    &mo 3  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&mm_f1  &mm_f2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 1                                                    &mo 3  &mm_f7  &mm_f8  &mm_f9  &mm_f10  &mm_f11  &mm_f12
 &trans  &trans  &trans  &trans  &trans  &trans  &none                                                     &none  &trans  &trans  &trans  &trans   &trans   &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &none           &trans  &trans    &trans  &trans          &none  &trans  &trans  &trans  &trans   &trans   &trans
 &trans  &trans  &trans  &trans  &trans  &trans                          &trans    &trans                         &trans  &trans  &trans  &trans   &trans   &trans
